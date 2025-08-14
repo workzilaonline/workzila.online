@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work Zila - Your Productivity Hub</title>
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Global Styles */
+        body {
+            background-color: #1E1E2F;
+            color: #EAEAEA;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+            flex: 1;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #2B2D42;
+            padding: 25px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: #FFD700;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            color: #EAEAEA;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Tools Grid */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .tool-card {
+            background-color: #3A3D5B;
+            border-radius: 10px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(255, 215, 0, 0.2);
+            border: 1px solid rgba(255, 215, 0, 0.1);
+        }
+
+        .tool-card:hover {
+            background-color: #FFD700;
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(255, 215, 0, 0.3);
+        }
+
+        .tool-card:hover h2,
+        .tool-card:hover p {
+            color: #1E1E2F;
+        }
+
+        .tool-card h2 {
+            color: #FFD700;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .tool-card p {
+            margin-bottom: 20px;
+            color: #EAEAEA;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #FFD700;
+            color: #1E1E2F;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-size: 0.9rem;
+            min-width: 120px;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: #E6C200;
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2B2D42;
+            color: #EAEAEA;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer-links a {
+            color: #EAEAEA;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #FFD700;
+        }
+
+        .contact-info {
+            margin-top: 10px;
+        }
+
+        .contact-info a {
+            color: #FFD700;
+            text-decoration: none;
+        }
+
+        .copyright {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .tool-card {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .tagline {
+                font-size: 1rem;
+            }
+
+            .btn {
+                padding: 8px 16px;
+                min-width: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Work Zila</h1>
+            <p class="tagline">Your ultimate platform for remote work opportunities and career growth solutions</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="tools-grid">
+            <!-- Tool Card 1 -->
+            <div class="tool-card">
+                <h2>Work From Home</h2>
+                <p>Discover premium remote work opportunities tailored to your skills and experience level.</p>
+                <button class="btn" onclick="redirectToTool('Work From Home')">Explore</button>
+            </div>
+
+            <!-- Tool Card 2 -->
+            <div class="tool-card">
+                <h2>Pole Option</h2>
+                <p>Explore alternative career paths and flexible work arrangements that suit your lifestyle.</p>
+                <button class="btn" onclick="redirectToTool('Pole Option')">Explore</button>
+            </div>
+
+            <!-- Tool Card 3 -->
+            <div class="tool-card">
+                <h2>Remote Job Finder</h2>
+                <p>Our advanced algorithm matches you with the best remote positions based on your profile.</p>
+                <button class="btn" onclick="redirectToTool('Remote Job Finder')">Explore</button>
+            </div>
+
+            <!-- Tool Card 4 -->
+            <div class="tool-card">
+                <h2>Freelance Hub</h2>
+                <p>Connect with clients worldwide and grow your freelance business with our marketplace.</p>
+                <button class="btn" onclick="redirectToTool('Freelance Hub')">Explore</button>
+            </div>
+
+            <!-- Tool Card 5 -->
+            <div class="tool-card">
+                <h2>Skill Builder</h2>
+                <p>Enhance your professional skills with our curated learning paths and certification courses.</p>
+                <button class="btn" onclick="redirectToTool('Skill Builder')">Explore</button>
+            </div>
+
+            <!-- Tool Card 6 -->
+            <div class="tool-card">
+                <h2>Productivity Toolkit</h2>
+                <p>Boost your efficiency with our collection of time management and organization tools.</p>
+                <button class="btn" onclick="redirectToTool('Productivity Toolkit')">Explore</button>
+            </div>
+
+            <!-- Tool Card 7 -->
+            <div class="tool-card">
+                <h2>Career Advisor</h2>
+                <p>Get personalized career guidance and roadmap from our industry experts.</p>
+                <button class="btn" onclick="redirectToTool('Career Advisor')">Explore</button>
+            </div>
+
+            <!-- Tool Card 8 -->
+            <div class="tool-card">
+                <h2>Wellness Center</h2>
+                <p>Maintain work-life balance with our health and wellness resources for professionals.</p>
+                <button class="btn" onclick="redirectToTool('Wellness Center')">Explore</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-links">
+                <a href="#">Home</a>
+                <a href="#">About Us</a>
+                <a href="#">Services</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+            <div class="contact-info">
+                Contact us at: <a href="mailto:workzila.online@gmail.com">workzila.online@gmail.com</a>
+            </div>
+            <div class="copyright">
+                &copy; 2023 Work Zila. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for button interactions
+        function redirectToTool(toolName) {
+            alert(`Redirecting to ${toolName} page...`);
+            // In a real implementation, this would navigate to the tool page
+            // window.location.href = `/tools/${toolName.toLowerCase().replace(/\s+/g, '-')}`;
+        }
+
+        // Add animation effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animation for tool cards on page load
+            const toolCards = document.querySelectorAll('.tool-card');
+            toolCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.animation = `fadeInUp 0.5s ease forwards ${index * 0.1}s`;
+            });
+
+            // Add the keyframes dynamically
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes fadeInUp {
+                    from {
+                        opacity: 0;
+                        transform: translateY(20px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html>
