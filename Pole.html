@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Work Provider — Poll & Explore</title>
+  <style>
+    body{
+      margin:0; font-family: system-ui, sans-serif; background:#0f172a; color:#e5e7eb; display:flex; justify-content:center; padding:40px;
+    }
+    .poll{
+      max-width:800px; background:#111827; padding:32px; border-radius:20px; box-shadow:0 10px 25px rgba(0,0,0,0.4);
+    }
+    .poll h2{
+      font-size:2rem; margin-bottom:12px; background:linear-gradient(90deg,#22d3ee,#a78bfa); -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+    }
+    .poll p{
+      font-size:1rem; color:#cbd5e1; margin-bottom:24px; line-height:1.6;
+    }
+    .options{
+      display:grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap:16px; margin-bottom:24px;
+    }
+    .option{
+      background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); padding:16px; border-radius:12px; text-align:center; font-size:0.95rem; cursor:pointer; transition:transform 0.2s, background 0.2s;
+    }
+    .option:hover{background:rgba(255,255,255,0.08); transform:translateY(-2px)}
+    .option span{font-size:1.5rem; display:block; margin-bottom:8px}
+    .cta{
+      display:inline-block; background:linear-gradient(90deg,#22d3ee,#a78bfa); color:#0f172a; padding:12px 20px; border-radius:10px; font-weight:700; text-decoration:none; box-shadow:0 4px 15px rgba(167,139,250,0.3);
+    }
+  </style>
+</head>
+<body>
+  <section class="poll">
+    <h2>What’s Your Opinion?</h2>
+    <p>We’d love to know what kind of work-from-home opportunity you’re looking for. Choose your favorite option below and let us know!</p>
+    <div class="options">
+      <div class="option"><span>📲</span>Work only from mobile</div>
+      <div class="option"><span>🕒</span>Flexible hours & part-time</div>
+      <div class="option"><span>🎯</span>Earn while learning</div>
+      <div class="option"><span>💸</span>Performance-based high income</div>
+      <div class="option"><span>🌍</span>International projects with team</div>
+      <div class="option"><span>🛡️</span>Safe & trusted work</div>
+    </div>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeTD7Ve0Nq99i5lTQPRDYdIUtOie4BotWtXbxHmHeySLZY3rA/viewform?usp=header" target="_blank" class="cta">Submit Your Response</a>
+  </section>
+</body>
+</html>
