@@ -1,45 +1,42 @@
 <!--
   Reusable "Explore Opportunities" section for a Work Provider website
-  - Drop this <section> anywhere in your page
-  - It uses its own scoped CSS to avoid conflicts
-  - Update the CTA link (data-target or href) as needed
 -->
 <section id="explore" class="xp-wrap">
   <div class="xp-container">
     <header class="xp-header">
-      <p class="xp-kicker">Explore • अवसर</p>
+      <p class="xp-kicker">Explore • Opportunities</p>
       <h2 class="xp-title">Discover Flexible & Genuine Work-from-Home Opportunities</h2>
-      <p class="xp-sub">घर बैठे कमाई और सीखने का मौका — पार्ट‑टाइम लचीलापन या फुल‑टाइम ग्रोथ, ट्रेनिंग और सपोर्ट के साथ।</p>
+      <p class="xp-sub">Earn and learn from home — choose part-time flexibility or full-time growth with training and support.</p>
     </header>
 
     <div class="xp-grid">
       <article class="xp-card">
         <div class="xp-ico" aria-hidden>📲</div>
-        <h3 class="xp-card-title">Mobile Se Kaam</h3>
-        <p class="xp-card-text">किसी भारी setup की ज़रूरत नहीं — सिर्फ़ स्मार्टफोन और इंटरनेट काफी है।</p>
+        <h3 class="xp-card-title">Work From Mobile</h3>
+        <p class="xp-card-text">No heavy setup required — just a smartphone and internet is enough.</p>
       </article>
 
       <article class="xp-card">
         <div class="xp-ico" aria-hidden>⏱️</div>
         <h3 class="xp-card-title">Flexible Timing</h3>
-        <p class="xp-card-text">अपनी पढ़ाई/नौकरी के साथ आराम से manage करें — part‑time या full‑time।</p>
+        <p class="xp-card-text">Easily manage along with studies or job — part-time or full-time.</p>
       </article>
 
       <article class="xp-card">
         <div class="xp-ico" aria-hidden>🎯</div>
         <h3 class="xp-card-title">Training & Support</h3>
-        <p class="xp-card-text">Step‑by‑step guidance, tools और community support ताकि आप तेज़ी से सीखें।</p>
+        <p class="xp-card-text">Step-by-step guidance, tools, and community support to help you learn fast.</p>
       </article>
 
       <article class="xp-card">
         <div class="xp-ico" aria-hidden>💸</div>
         <h3 class="xp-card-title">Performance Income</h3>
-        <p class="xp-card-text">आपकी मेहनत = आपका result. Transparent growth path और rewards।</p>
+        <p class="xp-card-text">Your effort = Your result. Transparent growth path and rewards.</p>
       </article>
     </div>
 
     <div class="xp-cta">
-      <a class="xp-button" href="#apply" data-target="#apply" role="button">Start Exploring / अभी शुरू करें</a>
+      <a class="xp-button" href="https://docs.google.com/forms/d/e/1FAIpQLSeTD7Ve0Nq99i5lTQPRDYdIUtOie4BotWtXbxHmHeySLZY3rA/viewform?usp=header" target="_blank" role="button">Start Exploring / Apply Now</a>
       <p class="xp-note">18+ only • Genuine opportunities • No heavy investment</p>
     </div>
   </div>
@@ -67,18 +64,4 @@
     .xp-button:focus{ outline: none; box-shadow: 0 0 0 4px rgba(167,139,250,.25) }
     .xp-note{ margin:0; color:var(--xp-muted); font-size:12px }
   </style>
-
-  <script>
-    // Optional smooth scroll for CTA
-    (function(){
-      const btn = document.currentScript.previousElementSibling.querySelector('.xp-button');
-      if(!btn) return;
-      btn.addEventListener('click', function(e){
-        const sel = this.getAttribute('data-target');
-        if(!sel) return;
-        const target = document.querySelector(sel);
-        if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth', block:'start'}); }
-      });
-    })();
-  </script>
 </section>
