@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnlineWork - Earn Money & Get Entertainment</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary: #2a52be;
+            --secondary: #ff6b00;
+            --light: #f8f9fa;
+            --dark: #343a40;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .apply-btn {
+            background-color: var(--secondary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-btn {
+            background-color: var(--secondary);
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .hero-btn:hover {
+            background-color: #e05d00;
+        }
+        
+        /* Opportunities Section */
+        .opportunities {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .opportunity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .opportunity-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .opportunity-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-img {
+            height: 180px;
+            background-color: #ddd;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .card-content {
+            padding: 1.5rem;
+        }
+        
+        .card-content h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .card-content p {
+            margin-bottom: 1rem;
+            color: #666;
+        }
+        
+        .earn-badge {
+            display: inline-block;
+            background-color: #ffeb3b;
+            color: #333;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .card-btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .card-btn:hover {
+            background-color: #1c3a94;
+        }
+        
+        /* Entertainment Section */
+        .entertainment {
+            padding: 4rem 0;
+            background-color: var(--light);
+        }
+        
+        .entertainment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .entertainment-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .entertainment-img {
+            height: 150px;
+            background-color: #eee;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .entertainment-content {
+            padding: 1rem;
+        }
+        
+        .entertainment-content h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        /* Application Form */
+        .application-form {
+            padding: 4rem 0;
+            background-color: white;
+        }
+        
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: var(--light);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+        }
+        
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background-color: var(--secondary);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+        
+        .submit-btn:hover {
+            background-color: #e05d00;
+        }
+        
+        /* Fixed Apply Button */
+        .fixed-apply {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: var(--secondary);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 99;
+            display: flex;
+            align-items: center;
+        }
+        
+        .fixed-apply i {
+            margin-right: 0.5rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0 1.5rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Online<span>Work</span></div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#opportunities">Opportunities</a></li>
+                    <li><a href="#entertainment">Entertainment</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#apply" class="apply-btn">Apply Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Earn Money Online With Flexible Work</h1>
+            <p>Join thousands of people who are making money from home with our verified online work opportunities. No experience required!</p>
+            <button class="hero-btn" onclick="scrollToForm()">Apply Now - It's Free!</button>
+        </div>
+    </section>
+
+    <!-- Opportunities Section -->
+    <section class="opportunities" id="opportunities">
+        <div class="container">
+            <div class="section-title">
+                <h2>Available Work Opportunities</h2>
+                <p>Choose from these verified ways to earn money online</p>
+            </div>
+            
+            <div class="opportunity-grid">
+                <!-- Opportunity 1 -->
+                <div class="opportunity-card">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="card-content">
+                        <span class="earn-badge">Earn ₹500-₹2000/day</span>
+                        <h3>Data Entry Specialist</h3>
+                        <p>Simple typing work from your mobile or computer. Flexible hours available.</p>
+                        <a href="#apply" class="card-btn">Apply Now</a>
+                    </div>
+                </div>
+                
+                <!-- Opportunity 2 -->
+                <div class="opportunity-card">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1526947425960-945c6e72858f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="card-content">
+                        <span class="earn-badge">Earn ₹1000-₹5000/day</span>
+                        <h3>Social Media Manager</h3>
+                        <p>Manage social media accounts for businesses. Work from anywhere.</p>
+                        <a href="#apply" class="card-btn">Apply Now</a>
+                    </div>
+                </div>
+                
+                <!-- Opportunity 3 -->
+                <div class="opportunity-card">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1434626881859-194d67b2b86f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="card-content">
+                        <span class="earn-badge">Earn ₹300-₹1500/day</span>
+                        <h3>Online Surveys</h3>
+                        <p>Share your opinion and get paid. Simple work for everyone.</p>
+                        <a href="#apply" class="card-btn">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Entertainment Section -->
+    <section class="entertainment" id="entertainment">
+        <div class="container">
+            <div class="section-title">
+                <h2>Entertainment Zone</h2>
+                <p>Enjoy while you earn with our fun content</p>
+            </div>
+            
+            <div class="entertainment-grid">
+                <!-- Entertainment 1 -->
+                <div class="entertainment-card">
+                    <div class="entertainment-img" style="background-image: url('https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="entertainment-content">
+                        <h3>Daily Funny Memes</h3>
+                        <p>Latest viral memes to make you laugh</p>
+                    </div>
+                </div>
+                
+                <!-- Entertainment 2 -->
+                <div class="entertainment-card">
+                    <div class="entertainment-img" style="background-image: url('https://images.unsplash.com/photo-1496065187959-7f07b8353c55?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="entertainment-content">
+                        <h3>Short Videos</h3>
+                        <p>Trending videos from across the web</p>
+                    </div>
+                </div>
+                
+                <!-- Entertainment 3 -->
+                <div class="entertainment-card">
+                    <div class="entertainment-img" style="background-image: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="entertainment-content">
+                        <h3>Daily Quiz</h3>
+                        <p>Test your knowledge and win prizes</p>
+                    </div>
+                </div>
+                
+                <!-- Entertainment 4 -->
+                <div class="entertainment-card">
+                    <div class="entertainment-img" style="background-image: url('https://images.unsplash.com/photo-1553481187-be93c21490a9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="entertainment-content">
+                        <h3>Mini Games</h3>
+                        <p>Play simple games and earn points</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Form -->
+    <section class="application-form" id="apply">
+        <div class="container">
+            <div class="form-container">
+                <h2>Apply for Online Work</h2>
+                <form id="workForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input type="number" id="age" name="age" min="18" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input type="text" id="city" name="city" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="work">Preferred Work Type</label>
+                        <select id="work" name="work" required>
+                            <option value="">Select an option</option>
+                            <option value="data_entry">Data Entry</option>
+                            <option value="social_media">Social Media Management</option>
+                            <option value="surveys">Online Surveys</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="experience">Previous Experience (if any)</label>
+                        <textarea id="experience" name="experience"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Submit Application</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fixed Apply Button -->
+    <a href="#apply" class="fixed-apply">
+        <i class="fas fa-paper-plane"></i> Apply Now
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>OnlineWork</h3>
+                    <p>Helping people earn money online since 2023. Verified opportunities with flexible timing.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#opportunities">Opportunities</a></li>
+                        <li><a href="#entertainment">Entertainment</a></li>
+                        <li><a href="#apply">Apply Now</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 OnlineWork. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Form submission handling
+        document.getElementById('workForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            
+            // Here you would normally send the data to a server
+            // For this demo, we'll just show an alert
+            alert(`Thank you ${name}! Your application has been received. We will contact you at ${email} shortly.`);
+            
+            // Reset the form
+            this.reset();
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        });
+        
+        // Scroll to form function
+        function scrollToForm() {
+            document.getElementById('apply').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+        
+        // Mobile menu toggle (would need more implementation)
+        // This is just a placeholder for the functionality
+        function toggleMenu() {
+            // Implementation for mobile menu toggle
+        }
+    </script>
+</body>
+</html>
